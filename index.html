@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARTIST NAME — Works</title>
+  <meta name="description" content="Artist portfolio — Works, Bio, Contact" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Helvetica+Neue:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">ARTIST NAME</a>
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link active">Works</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- WORKS GRID -->
+  <main class="works-grid" id="works">
+
+    <!-- Each work item — replace src with actual image paths -->
+    <article class="work-item" data-index="0">
+      <div class="work-thumb">
+        <img src="assets/images/work-01.jpg" alt="Work Title 01" loading="lazy" />
+      </div>
+      <div class="work-meta">
+        <span class="work-title">Untitled 01</span>
+        <span class="work-year">2024</span>
+      </div>
+    </article>
+
+    <article class="work-item" data-index="1">
+      <div class="work-thumb">
+        <img src="assets/images/work-02.jpg" alt="Work Title 02" loading="lazy" />
+      </div>
+      <div class="work-meta">
+        <span class="work-title">Untitled 02</span>
+        <span class="work-year">2024</span>
+      </div>
+    </article>
+
+    <article class="work-item" data-index="2">
+      <div class="work-thumb">
+        <img src="assets/images/work-03.jpg" alt="Work Title 03" loading="lazy" />
+      </div>
+      <div class="work-meta">
+        <span class="work-title">Untitled 03</span>
+        <span class="work-year">2023</span>
+      </div>
+    </article>
+
+    <article class="work-item" data-index="3">
+      <div class="work-thumb">
+        <img src="assets/images/work-04.jpg" alt="Work Title 04" loading="lazy" />
+      </div>
+      <div class="work-meta">
+        <span class="work-title">Untitled 04</span>
+        <span class="work-year">2023</span>
+      </div>
+    </article>
+
+    <article class="work-item" data-index="4">
+      <div class="work-thumb">
+        <img src="assets/images/work-05.jpg" alt="Work Title 05" loading="lazy" />
+      </div>
+      <div class="work-meta">
+        <span class="work-title">Untitled 05</span>
+        <span class="work-year">2022</span>
+      </div>
+    </article>
+
+    <article class="work-item" data-index="5">
+      <div class="work-thumb">
+        <img src="assets/images/work-06.jpg" alt="Work Title 06" loading="lazy" />
+      </div>
+      <div class="work-meta">
+        <span class="work-title">Untitled 06</span>
+        <span class="work-year">2022</span>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption">
+        <span class="lightbox-title" id="lightboxTitle"></span>
+        <span class="lightbox-year" id="lightboxYear"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span>&copy; <span id="year"></span> ARTIST NAME. All rights reserved.</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

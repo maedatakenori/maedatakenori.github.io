@@ -1,0 +1,366 @@
+/* ============================================================
+   ARTIST PORTFOLIO — style.css
+   Philosophy: Work first. Everything else is silence.
+   ============================================================ */
+
+/* ── TOKENS ───────────────────────────────────────────────── */
+:root {
+  --bg:          #f7f7f5;
+  --surface:     #ffffff;
+  --ink:         #111111;
+  --ink-muted:   #888888;
+  --border:      #e0e0e0;
+  --accent:      #111111;
+
+  --font-serif:  'EB Garamond', Georgia, serif;
+  --font-sans:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --header-h:    56px;
+  --gap:         clamp(16px, 2.5vw, 40px);
+  --page-pad:    clamp(20px, 5vw, 72px);
+
+  --ease:        cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ── RESET ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a   { color: inherit; text-decoration: none; }
+ul  { list-style: none; }
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-pad);
+  background: var(--bg);
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.site-nav { display: flex; gap: 2.5rem; }
+
+.nav-link {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  transition: color 0.2s var(--ease);
+}
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+/* ── WORKS GRID ───────────────────────────────────────────── */
+.works-grid {
+  margin-top: var(--header-h);
+  padding: calc(var(--gap) * 2) var(--page-pad);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: calc(var(--gap) * 2) var(--gap);
+  flex: 1;
+}
+
+.work-item { cursor: pointer; }
+
+.work-thumb {
+  overflow: hidden;
+  background: var(--border);
+  aspect-ratio: 4 / 3;
+}
+
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s var(--ease), opacity 0.3s var(--ease);
+}
+
+.work-item:hover .work-thumb img {
+  transform: scale(1.03);
+  opacity: 0.88;
+}
+
+.work-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.work-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.work-year {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+
+/* ── LIGHTBOX ─────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.lightbox-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+}
+.lightbox-year {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 12px;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { color: #fff; }
+
+.lightbox-close { top: 20px; right: 24px; font-size: 1rem; }
+.lightbox-prev  { left: 20px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; }
+.lightbox-next  { right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; }
+
+/* ── ABOUT PAGE ───────────────────────────────────────────── */
+.about-page {
+  margin-top: var(--header-h);
+  padding: calc(var(--gap) * 3) var(--page-pad);
+  flex: 1;
+}
+
+.about-bio {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: calc(var(--gap) * 2);
+  margin-bottom: calc(var(--gap) * 3);
+  align-items: start;
+}
+
+.about-portrait img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  filter: grayscale(15%);
+}
+
+.about-name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+
+.about-statement {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+  max-width: 60ch;
+}
+
+/* CV */
+.cv-section { max-width: 640px; }
+
+.cv-block { margin-bottom: calc(var(--gap) * 1.8); }
+
+.cv-heading {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-list li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.cv-year {
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding-top: 0.05em;
+}
+
+.cv-download { margin-top: calc(var(--gap) * 1.5); }
+
+.cv-download-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.cv-download-link:hover { opacity: 0.5; }
+
+/* ── CONTACT PAGE ─────────────────────────────────────────── */
+.contact-page {
+  margin-top: var(--header-h);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--gap) var(--page-pad);
+}
+
+.contact-inner { max-width: 400px; }
+
+.contact-heading {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 2.5rem;
+}
+
+.contact-info p {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 1.8rem;
+}
+
+.contact-email {
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.2s;
+}
+.contact-email:hover { opacity: 0.5; }
+
+.contact-social { margin-top: 2rem; }
+
+.social-link {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.social-link:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.site-footer {
+  padding: 1.5rem var(--page-pad);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ── MOBILE ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .works-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    padding: calc(var(--gap) * 1.5) var(--page-pad);
+  }
+
+  .about-bio {
+    grid-template-columns: 1fr;
+  }
+
+  .about-portrait { max-width: 200px; }
+
+  .site-nav { gap: 1.5rem; }
+
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+}
+
+@media (max-width: 380px) {
+  .works-grid { grid-template-columns: 1fr; }
+}
