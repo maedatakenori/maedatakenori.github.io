@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Execution Protocol — Incision — TAKENORI MAEDA</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Page-scoped styles for incision ── */
+
+    .incision-section {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    /* ── Heading ── */
+    .incision-heading {
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .incision-heading h2 {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .incision-heading .incision-sub {
+      font-size: 1.1rem;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+    }
+    .incision-heading .incision-sub.en {
+      font-family: var(--font-serif);
+    }
+    .incision-heading .incision-sub.jp {
+      font-family: var(--font-mincho);
+      display: none;
+    }
+    body.show-jp .incision-heading .incision-sub.jp { display: block; }
+    body.show-jp .incision-heading .incision-sub.en { display: none; }
+
+    /* ── Introductory Note ── */
+    .incision-note {
+      margin-bottom: 3.5rem;
+      padding: 1.2rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .incision-note p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    .incision-note p.en {
+      font-family: var(--font-serif);
+    }
+
+    .incision-note p.jp {
+      font-family: var(--font-mincho);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      display: none;
+    }
+    body.show-jp .incision-note p.jp { display: block; }
+    body.show-jp .incision-note p.en { display: none; }
+
+    /* ── Protocol Screenshots ── */
+    .protocol-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .protocol-item {
+      width: 100%;
+    }
+
+    .protocol-item .protocol-image-wrap {
+      width: 100%;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .protocol-item .protocol-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Placeholder state (before images are added) */
+    .protocol-item .protocol-image-wrap.placeholder {
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0ee;
+    }
+
+    .protocol-item .protocol-image-wrap.placeholder span {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+
+    .protocol-meta {
+      margin-top: 0.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-muted);
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    /* ── Concept Divider ── */
+    .concept-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 3rem;
+    }
+
+    /* ── Concept Sections ── */
+    .incision-concepts {
+      position: relative;
+    }
+
+    .incision-concepts .process-step {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .incision-concepts .process-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* ── Back Link ── */
+    .incision-back {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .incision-back a {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s var(--ease);
+    }
+
+    .incision-back a:hover {
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body class="page-works">
+
+  <header class="site-header">
+    <a href="index.html" class="site-title">TAKENORI MAEDA</a>
+    <nav class="site-nav">
+      <a href="works.html" class="nav-link active">Works</a>
+      <a href="statement.html" class="nav-link">Statement</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="works-page">
+
+    <section class="incision-section">
+
+      <!-- ── Heading ── -->
+      <div class="incision-heading">
+        <button class="lang-toggle" aria-label="Toggle language">JP</button>
+        <h2>Execution Protocol — Incision</h2>
+        <div class="incision-sub en">Completed as Specification — Never to be Executed</div>
+        <div class="incision-sub jp">仕様として完成——実行されない</div>
+      </div>
+
+      <!-- ── Introductory Note ── -->
+      <div class="incision-note">
+        <p class="en">Protocol outputs, generated between March–April 2026.<br>
+           Non-execution declared, June 2026.</p>
+        <p class="jp">プロトコル出力（2026年3月〜4月）。2026年6月、不実行を宣言。</p>
+      </div>
+
+      <!-- ── Protocol Screenshots ── -->
+      <div class="protocol-gallery">
+
+        <div class="protocol-item">
+          <div class="protocol-image-wrap">
+            <img src="assets/images/protocol-incision-01.png" alt="Protocol output #01 — Execution Protocol Incision" />
+          </div>
+          <div class="protocol-meta">
+            <span>ITERATION: #01</span>
+            <span>SEED: 560897457</span>
+          </div>
+        </div>
+
+        <div class="protocol-item">
+          <div class="protocol-image-wrap">
+            <img src="assets/images/protocol-incision-02.png" alt="Protocol output #02 — Execution Protocol Incision" />
+          </div>
+          <div class="protocol-meta">
+            <span>ITERATION: #02</span>
+            <span>SEED: 425731348</span>
+          </div>
+        </div>
+
+        <div class="protocol-item">
+          <div class="protocol-image-wrap">
+            <img src="assets/images/protocol-incision-03.png" alt="Protocol output #03 — Execution Protocol Incision" />
+          </div>
+          <div class="protocol-meta">
+            <span>ITERATION: #03</span>
+            <span>SEED: 3613020</span>
+          </div>
+        </div>
+
+        <div class="protocol-item">
+          <div class="protocol-image-wrap">
+            <img src="assets/images/protocol-incision-04.png" alt="Protocol output #04 — Execution Protocol Incision" />
+          </div>
+          <div class="protocol-meta">
+            <span>ITERATION: #04</span>
+            <span>SEED: 37363734</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Concept Sections ── -->
+      <hr class="concept-divider">
+
+      <div class="incision-concepts">
+
+        <div class="process-step" style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px dashed var(--border);">
+          <p class="en" style="font-family: var(--font-serif); font-size: 1rem; line-height: 1.5;">A generative system for the physical destruction of images. It calculates edge-to-edge incisions and the absolute placement of completely independent color bars to dictate a physical collage execution.</p>
+          <p class="jp" style="font-family: var(--font-mincho); font-size: 0.92rem; line-height: 1.85; margin-top: 1rem; display: none;">画像の物理的な破壊のための生成システム。画面の端から端までの自律的な直線の切断と、それらから完全に独立した座標へのカラーバーの配置を算出し指示します。</p>
+        </div>
+
+        <div class="process-step">
+          <h3 class="en">Concept</h3>
+          <h3 class="jp">概念</h3>
+          <p class="jp">「Execution Protocol — Incision」は、デジタルグリッチやアルゴリズムによる暴力を、直接的に物理的な領域へ持ち込むために設計されたプロセスです。破壊の段階において制作者の意図を完全に放棄し、厳密な数学的プロトコルのみに依存して、紙上の細密画や写真がどのように切断され、再構築されるかを決定します。細密画を生み出すために労働したその同じ手に、今度はその破壊の遂行が命じられる——労働者と管理者が決して分離されることのない、自己管理のショートサーキットです。命令は発行された。実行されないまま、留まる。</p>
+          <p class="en">The "Execution Protocol — Incision" is a generative system designed to transfer the concept of digital glitch and algorithmic violence directly into the physical realm. By abandoning artistic authorship during the destruction phase, this project relies on a forged protocol that presents itself as strictly mathematical to determine how a physical drawing or photograph is dismantled and reconstructed. The hand that labored to produce the drawing is the same hand the protocol commands to destroy it — a short-circuit of self-management where the worker and the manager are never separated. The command has been issued. It remains unexecuted.</p>
+        </div>
+
+        <div class="process-step">
+          <h3 class="en">The Operation</h3>
+          <h3 class="jp">実行手段</h3>
+          <p class="jp">JPEGのバイト単位のデータを操作していた以前のプロジェクトとは異なり、このシステムはアナログな平面を直接の処理キャンバスとして扱います。ジェネレーターは画面の端から端を突き抜ける自律的な直線切断を算出し、同時に、切断された結果を一切考慮せずに完全に独立した座標へ、特定のカラーバーを物理的に配置する指示を出力します。</p>
+          <p class="en">In contrast to previous iterations that manipulated JPEG byte streams, this system treats the analog surface as its operational canvas. The generator calculates autonomous, edge-to-edge incisions across the image. Randomly selected color bars (derived from physical cutting sheet palettes) are subsequently assigned absolute coordinate positions overlaying the newly fragmented structure.</p>
+        </div>
+
+        <div class="process-step">
+          <h3 class="en">The Unexecuted Command</h3>
+          <h3 class="jp">実行されない命令</h3>
+          <p class="jp">直線による切断は描かれた図像を物理的に破砕し、カラーテープは座標指示のみに従って盲目的に貼り付けられる——はずだった。切断は行われない。座標は宛先のないまま残る。ここに存在するのは、無関心なコマンドログのみである。</p>
+          <p class="en">The cuts would shatter the drawn surface; the color tape would be blindly applied according to the coordinates. The incision is not carried out. The coordinates remain without a destination. What exists is the indifferent command log, and nothing else.</p>
+        </div>
+
+      </div>
+
+      <!-- ── Back Link ── -->
+      <div class="incision-back">
+        <a href="works.html">&larr; Back to Works</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; <span id="year">2026</span> Takenori Maeda</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
