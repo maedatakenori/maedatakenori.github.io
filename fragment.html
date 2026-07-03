@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Execution Protocol — Fragment — TAKENORI MAEDA</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Page-scoped styles for Fragment (Series 3) ── */
+
+    .fragment-section {
+      margin-bottom: 5rem;
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .fragment-left {
+      flex: 1;
+      min-width: 300px;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    .fragment-right {
+      flex: 1.2;
+      min-width: 300px;
+      position: sticky;
+      top: 80px;
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      box-sizing: border-box;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+
+    .v-divider {
+      width: 1px;
+      background: var(--border-color, #eee);
+      flex-shrink: 0;
+      min-height: 100%;
+    }
+
+    /* ── Fragment entry ── */
+    .fragment-entry {
+      margin-bottom: 4rem;
+    }
+
+    .fragment-entry .f-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      margin: 0 0 0.4rem 0;
+    }
+    .fragment-entry .f-title .label { color: #000; font-weight: 500; }
+    .fragment-entry .f-title .value { color: #444; }
+
+    .fragment-entry .f-meta {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+      letter-spacing: 0.05em;
+    }
+
+    .fragment-entry .f-hash {
+      font-family: "Courier New", monospace;
+      font-size: 0.62rem;
+      color: #999;
+      word-break: break-all;
+      letter-spacing: 0.02em;
+      margin-top: 0.3rem;
+    }
+
+    /* red flag — recorded error (F05/S01) */
+    .f-hash.flagged,
+    .f-meta .flagged {
+      color: #c1121f;
+    }
+    .work-thumb.flagged img,
+    .work-thumb.flagged .ph {
+      border: 2px solid #c1121f !important;
+    }
+    .flag-note {
+      display: inline-block;
+      font-family: "Courier New", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: #c1121f;
+      margin-top: 0.3rem;
+    }
+
+    /* image grid */
+    .f-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+    }
+
+    .work-thumb img,
+    .work-thumb .ph {
+      border: 1px solid #ddd;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #fafafa;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    /* placeholder box — delete once real image is in place */
+    .work-thumb .ph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+
+    .thumb-caption {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: #999;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    /* ── Right panel ── */
+    .fragment-right .series-sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      border-bottom: 1px solid var(--border-color, #eee);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
+      padding-right: 2rem;
+    }
+
+    .fragment-right .epigraph {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin: 0 0 1.6rem 0;
+      line-height: 1.7;
+    }
+    .fragment-right .epigraph.jp {
+      font-family: var(--font-mincho);
+      font-style: normal;
+      display: none;
+    }
+    body.show-jp .fragment-right .epigraph.jp { display: block; }
+    body.show-jp .fragment-right .epigraph.en { display: none; }
+
+    /* forthcoming block */
+    .forthcoming {
+      border: 1px dashed var(--border, #ccc);
+      padding: 1.2rem 1.4rem;
+      margin-top: 1rem;
+    }
+    .forthcoming .fc-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body class="page-works">
+
+  <header class="site-header">
+    <a href="index.html" class="site-title">TAKENORI MAEDA</a>
+    <nav class="site-nav">
+      <a href="works.html" class="nav-link active">Works</a>
+      <a href="statement.html" class="nav-link">Statement</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <main class="works-page">
+
+    <section class="fragment-section" id="series-fragment">
+
+      <!-- ══════════ LEFT: WORKS ══════════ -->
+      <div class="fragment-left">
+
+        <!-- ── FRAGMENT 01 ── -->
+        <div class="fragment-entry">
+          <p class="f-title"><span class="label">Fragment 01</span> <span class="value">— ENDED</span></p>
+          <div class="f-meta">
+            2026 / Ink on torn paper<br>
+            1 session / 27 min cumulative<br>
+            Terminated by protocol (END, byte 5/255)
+            <div class="f-hash">05737eaa6994010e43d9a48a1443dc87ceecd1212306a8e8133e88a66fc7c9de</div>
+          </div>
+          <div class="f-grid">
+            <article class="work-item" data-index="0">
+              <div class="work-thumb">
+                <!-- 画像を入れたらこの .ph を <img src="assets/images/fragment01-front.jpg" alt="Fragment 01 — recto" loading="lazy"> に差し替え -->
+                <div class="ph">F01 — RECTO</div>
+              </div>
+              <div class="thumb-caption">recto</div>
+            </article>
+            <article class="work-item" data-index="1">
+              <div class="work-thumb">
+                <div class="ph">F01 — VERSO</div>
+              </div>
+              <div class="thumb-caption">verso — handwritten record</div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ── FRAGMENT 02 ── -->
+        <div class="fragment-entry">
+          <p class="f-title"><span class="label">Fragment 02</span> <span class="value">— ENDED</span></p>
+          <div class="f-meta">
+            2026 / Ink on torn paper<br>
+            7 sessions over 11 days / 161 min cumulative<br>
+            S07: DEFER — terminated by the operator
+            <div class="f-hash">383dd7d61c153b752ca46c54a0c9e8b41f72821ce3493d04c0555a83da098b35</div>
+          </div>
+          <div class="f-grid">
+            <article class="work-item" data-index="2">
+              <div class="work-thumb"><div class="ph">F02 — RECTO</div></div>
+              <div class="thumb-caption">recto</div>
+            </article>
+            <article class="work-item" data-index="3">
+              <div class="work-thumb"><div class="ph">F02 — VERSO</div></div>
+              <div class="thumb-caption">verso — 7 sessions</div>
+            </article>
+            <article class="work-item" data-index="4">
+              <div class="work-thumb"><div class="ph">F02 — SESSION LOG</div></div>
+              <div class="thumb-caption">judgment log</div>
+            </article>
+            <article class="work-item" data-index="5">
+              <div class="work-thumb"><div class="ph">F02 — DETAIL</div></div>
+              <div class="thumb-caption">detail</div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ── FRAGMENT 03 / +α01 ── -->
+        <div class="fragment-entry">
+          <p class="f-title"><span class="label">Fragment 03 / 03+α01</span> <span class="value">— PHYSICAL LIMIT → ADD / ONGOING</span></p>
+          <div class="f-meta">
+            2026 / Ink on torn paper, two sheets<br>
+            F03: 5 sessions → REPORT: CANNOT DRAW → ADD<br>
+            The hash chain continues across the paper. The labor was not permitted to end.
+            <div class="f-hash">PREV[94a0c5936f7bddfd377296f3d917ebff98448bbc2d4d7082081d53a70744f5d1]</div>
+          </div>
+          <div class="f-grid">
+            <article class="work-item" data-index="6">
+              <div class="work-thumb"><div class="ph">F03 — RECTO (FILLED)</div></div>
+              <div class="thumb-caption">f03 — surface exhausted</div>
+            </article>
+            <article class="work-item" data-index="7">
+              <div class="work-thumb"><div class="ph">F03 — ADD JUDGMENT</div></div>
+              <div class="thumb-caption">physical limit → add</div>
+            </article>
+            <article class="work-item" data-index="8">
+              <div class="work-thumb"><div class="ph">F03+α01 — RECTO</div></div>
+              <div class="thumb-caption">03+α01 — in progress</div>
+            </article>
+            <article class="work-item" data-index="9">
+              <div class="work-thumb"><div class="ph">F03+α01 — VERSO</div></div>
+              <div class="thumb-caption">verso</div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ── FRAGMENT 04 ── -->
+        <div class="fragment-entry">
+          <p class="f-title"><span class="label">Fragment 04</span> <span class="value">— ENDED</span></p>
+          <div class="f-meta">
+            2026 / Ink on torn paper<br>
+            5 sessions over 10 days<br>
+            Terminated by protocol (END)
+            <div class="f-hash"><!-- F04 final hash here --></div>
+          </div>
+          <div class="f-grid">
+            <article class="work-item" data-index="10">
+              <div class="work-thumb"><div class="ph">F04 — RECTO</div></div>
+              <div class="thumb-caption">recto</div>
+            </article>
+            <article class="work-item" data-index="11">
+              <div class="work-thumb"><div class="ph">F04 — VERSO</div></div>
+              <div class="thumb-caption">verso</div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ── FRAGMENT 05 ── with flagged record -->
+        <div class="fragment-entry">
+          <p class="f-title"><span class="label">Fragment 05</span> <span class="value">— ONGOING</span></p>
+          <div class="f-meta">
+            2026 / Ink on torn paper<br>
+            S01: an incorrect image was submitted. The protocol did not notice.<br>
+            <span class="flagged">The record was marked in red by the worker. It is not corrected.</span>
+            <div class="f-hash flagged">cb15f83d56b6c1aca69fa1fb22cd68beb0ca9a0a6ef3be62038a7413f37c70cd</div>
+            <span class="flag-note">S01 — IMAGE MISMATCH / RECORDED AS-IS</span>
+          </div>
+          <div class="f-grid">
+            <article class="work-item" data-index="12">
+              <div class="work-thumb flagged"><div class="ph">F05 — S01 RECORD</div></div>
+              <div class="thumb-caption" style="color:#c1121f;">s01 — flagged record</div>
+            </article>
+            <article class="work-item" data-index="13">
+              <div class="work-thumb"><div class="ph">F05 — RECTO</div></div>
+              <div class="thumb-caption">recto — in progress</div>
+            </article>
+          </div>
+        </div>
+
+        <!--
+        ── TEMPLATE: 新しいFragmentを追加するときは、この fragment-entry ブロックを複製 ──
+        <div class="fragment-entry">
+          <p class="f-title"><span class="label">Fragment 0X</span> <span class="value">— STATUS</span></p>
+          <div class="f-meta"> ... <div class="f-hash">HASH</div></div>
+          <div class="f-grid"> ... </div>
+        </div>
+        -->
+
+      </div>
+
+      <!-- divider -->
+      <div class="v-divider"></div>
+
+      <!-- ══════════ RIGHT: PROCESS (sticky) ══════════ -->
+      <div class="fragment-right works-process" style="flex: 1.2; min-width: 300px; position: sticky; top: 80px; align-self: flex-start; display: flex; flex-direction: column; padding: 2rem; box-sizing: border-box; max-height: calc(100vh - 80px); overflow-y: auto;">
+        <button class="lang-toggle" aria-label="Toggle language" style="z-index: 10;">JP</button>
+
+        <h2 style="margin-bottom: 0.3rem; font-size: 1.2rem; letter-spacing: 0.1em;">
+          Series 3: Execution Protocol — Fragment
+        </h2>
+        <div style="font-family: var(--font-serif); font-style: italic; font-size: 0.85rem; color: var(--ink-muted); border-bottom: 1px solid var(--border-color, #eee); padding-bottom: 0.8rem; margin-bottom: 1.2rem; padding-right: 2rem;">Ongoing, 2026 –</div>
+
+        <p class="epigraph en">Errors are not corrected. They are recorded.</p>
+        <p class="epigraph jp">誤りは訂正されない。記録される。</p>
+
+        <div class="process-step">
+          <h3 class="en">Phase 1 — Tearing</h3>
+          <h3 class="jp">Phase 1 ── ちぎる</h3>
+          <p class="en">Paper is torn by hand and numbered. The act is irreversible; the shape is never chosen.</p>
+          <p class="jp">紙は手でちぎられ、番号を与えられる。この行為は不可逆であり、形は選ばれない。</p>
+        </div>
+
+        <div class="process-step">
+          <h3 class="en">Phase 2 — Sessions</h3>
+          <h3 class="jp">Phase 2 ── セッション</h3>
+          <p class="en">Drawing is accumulated in unplanned sessions. Start and end times are handwritten on the verso — the worker records honestly, in a hand imitating the language of the system.</p>
+          <p class="jp">描画は無計画なセッションとして蓄積される。開始と終了の時刻は、裏面に手書きで記録される——労働者は誠実に記録する。システムの言語を真似た筆跡で。</p>
+        </div>
+
+        <div class="process-step">
+          <h3 class="en">Phase 3 — Judgment</h3>
+          <h3 class="jp">Phase 3 ── 判定</h3>
+          <p class="en">Each session is submitted to a SHA-256 protocol. Session data, an image hash, and the previous hash form a chain; the first byte returns a verdict — END, DEFER, or CONTINUE. No reason is given. When the protocol defers, the operator must decide, and the weight of the decision is transferred, not shared.</p>
+          <p class="jp">各セッションはSHA-256のプロトコルに提出される。セッションデータ、画像ハッシュ、直前のハッシュが連鎖をなし、先頭バイトが判定を返す——END、DEFER、CONTINUE。理由は与えられない。プロトコルが判断を保留するとき、オペレーターが決めなければならない。決定の重みは、共有されるのではなく、移譲される。</p>
+        </div>
+
+        <div class="process-step">
+          <h3 class="en">Phase 4 — Physical Limit</h3>
+          <h3 class="jp">Phase 4 ── 物理的限界</h3>
+          <p class="en">When the surface is exhausted, the worker reports: CANNOT DRAW. The protocol answers END or ADD. If ADD, a new sheet is torn and the hash chain continues across the paper — the labor is not permitted to end at the limit of its material.</p>
+          <p class="jp">描画面が尽きたとき、労働者は報告する——CANNOT DRAW。プロトコルはENDかADDで応える。ADDであれば新しい紙がちぎられ、ハッシュの連鎖は紙を超えて続く——労働は、物質の限界で終わることを許されない。</p>
+        </div>
+
+        <div class="forthcoming">
+          <div class="fc-title">Phase 5 — Reconstitution / 再構成（forthcoming）</div>
+          <p class="en" style="font-size:0.85rem; line-height:1.7;">When the protocol declares the work complete, the fragments are measured and placed — coordinates in millimetres, rotation in degrees — on a support assembled from the newspaper of that day. Color bars are then inflicted by the existing Overlay system.</p>
+          <p class="jp" style="font-size:0.82rem; line-height:1.85;">プロトコルが完成を宣言したとき、断片は測量され、配置される——座標はミリ単位、回転は度単位で——その日の新聞を貼り合わせた支持体の上に。その後、既存のOverlayシステムによってカラーバーが刻まれる。</p>
+        </div>
+
+        <!-- Series links -->
+        <hr style="border: none; border-top: 1px solid #ccc; width: 40px; margin: 2.5rem 0 1.2rem 0;">
+        <p style="margin: 0 0 0.5rem 0; text-align: left; font-size: 0.95rem; letter-spacing: 0.05em;">
+          <a href="works.html" style="text-decoration: underline; text-underline-offset: 4px; color: #333; font-weight: 500;">→ Series 1: Execution Protocol — Overlay</a>
+        </p>
+        <p style="margin: 0; text-align: left; font-size: 0.95rem; letter-spacing: 0.05em;">
+          <a href="incision.html" style="text-decoration: underline; text-underline-offset: 4px; color: #333; font-weight: 500;">→ Series 2: Execution Protocol — Incision</a>
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption">
+        <span class="lightbox-title" id="lightboxTitle"></span>
+        <span class="lightbox-year" id="lightboxYear"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span>&copy; <span id="year"></span> Takenori Maeda</span>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
