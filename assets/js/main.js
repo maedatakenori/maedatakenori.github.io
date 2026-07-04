@@ -1,16 +1,18 @@
 /* TAKENORI MAEDA — main.js */
 
 // ── PAGE TRANSITIONS ──────────────────────────────────────────
-// Fade in on load
-document.addEventListener('DOMContentLoaded', () => {
+// Fade in on every page load — including back/forward (bfcache) restores
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('page-fade-out');
   requestAnimationFrame(() => document.body.classList.add('page-visible'));
 });
 
 // Fade out before navigating to internal links
+// NOTE: We do NOT call e.preventDefault() — the browser handles
+//       navigation normally so the history stack stays intact.
 document.addEventListener('click', e => {
   const link = e.target.closest('a');
   if (!link) return;
-  // Ignore: no href, external, new tab, hash-only, mailto/tel
   const href = link.getAttribute('href');
   if (!href) return;
   if (link.target === '_blank') return;
@@ -21,20 +23,9 @@ document.addEventListener('click', e => {
   } catch {
     return;
   }
-
-  e.preventDefault();
+  // Just apply the visual fade — let the browser navigate naturally
   document.body.classList.remove('page-visible');
   document.body.classList.add('page-fade-out');
-  setTimeout(() => { window.location.assign(href); }, 310);
-});
-
-// Handle back/forward navigation (bfcache restoration)
-window.addEventListener('pageshow', e => {
-  if (e.persisted) {
-    // Page was restored from bfcache (back/forward button)
-    document.body.classList.remove('page-fade-out');
-    document.body.classList.add('page-visible');
-  }
 });
 
 // Footer year
