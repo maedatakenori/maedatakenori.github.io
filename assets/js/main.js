@@ -25,7 +25,16 @@ document.addEventListener('click', e => {
   e.preventDefault();
   document.body.classList.remove('page-visible');
   document.body.classList.add('page-fade-out');
-  setTimeout(() => { location.href = href; }, 310);
+  setTimeout(() => { window.location.assign(href); }, 310);
+});
+
+// Handle back/forward navigation (bfcache restoration)
+window.addEventListener('pageshow', e => {
+  if (e.persisted) {
+    // Page was restored from bfcache (back/forward button)
+    document.body.classList.remove('page-fade-out');
+    document.body.classList.add('page-visible');
+  }
 });
 
 // Footer year
