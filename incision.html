@@ -4,54 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Execution Protocol — Incision — TAKENORI MAEDA</title>
+  <meta name="description" content="Execution Protocol — Incision by Takenori Maeda: generated cutting specifications archived without physical execution." />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ── Page-scoped styles for Incision (Series 2) ── */
-
-    /* Placeholder state (before images are added) */
-    .protocol-image-wrap {
-      width: 100%;
-      background: #fafafa;
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .protocol-image-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .protocol-meta {
-      margin-top: 0.6rem;
-      font-family: var(--font-sans);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      color: var(--ink-muted);
-      display: flex;
-      gap: 1.8rem;
-    }
-
-    .protocol-item {
-      margin-bottom: 2.5rem;
-    }
-
-    /* Non-execution notice */
-    .non-execution-notice {
-      border: 1px dashed var(--border, #ccc);
-      padding: 1.2rem 1.4rem;
-      margin-top: 1rem;
-    }
-    .non-execution-notice .ne-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
+    .works-process { max-height:none !important; overflow:visible !important; }
+    .optional-material-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:0 0 2rem; }
+    .optional-material-grid figure { margin:0; }
+    .optional-material-grid img { width:100%; height:auto; display:block; border:1px solid #ddd; background:#fafafa; }
+    .optional-material-grid figcaption { margin-top:.45rem; font-size:.65rem; letter-spacing:.08em; color:#888; }
+    .non-execution-notice { border:1px dashed var(--border,#ccc); padding:1.2rem 1.4rem; margin-top:1rem; }
+    .non-execution-notice .ne-title { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); margin-bottom:.5rem; }
+    @media (max-width:760px) { .works-process { position:static !important; } .optional-material-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body class="page-works">
@@ -67,125 +33,71 @@
   </header>
 
   <main class="works-page">
+    <section class="series-section" id="series-incision" style="margin-bottom:5rem; display:flex; gap:0; align-items:stretch; flex-wrap:wrap;">
 
-    <section class="series-section" id="series-incision" style="margin-bottom: 5rem; display: flex; gap: 0; align-items: stretch; flex-wrap: wrap;">
-
-      <!-- Left side: Protocol Outputs -->
-      <div class="works-left-panel" style="flex: 1; min-width: 300px; padding: 2rem; box-sizing: border-box;">
-
-        <!-- Status -->
-        <p style="font-size: 0.75rem; letter-spacing: 0.15em; margin: 0 0 0.4rem 0;">
-          <span style="color: #000; font-weight: 500;">Execution Protocol — Incision</span>
+      <div class="works-left-panel" style="flex:1; min-width:300px; padding:2rem; box-sizing:border-box;">
+        <p style="font-size:.75rem; letter-spacing:.15em; margin:0 0 .4rem;">
+          <span style="color:#000; font-weight:500;">Execution Protocol — Incision</span>
         </p>
-        <div style="font-size: 0.8rem; color: #666; margin-bottom: 1.5rem; line-height: 1.7; letter-spacing: 0.05em;">
-          Protocol outputs, generated between March–April 2026<br>
-          Completed as Specification — Never to be Executed<br>
-          Non-execution declared, June 2026
+        <div style="font-size:.8rem; color:#666; margin-bottom:1.5rem; line-height:1.7; letter-spacing:.05em;">
+          Protocol outputs generated, March–April 2026<br>
+          Specification archived; execution withheld, June 2026
         </div>
 
-        <!-- Protocol Screenshots — vertical stack -->
-        <article class="work-item" data-index="0" style="margin-bottom: 2.5rem;">
-          <div class="work-thumb">
-            <img src="assets/images/protocol-incision-01.png" alt="Protocol output #01 — Execution Protocol Incision" loading="lazy" style="border: 1px solid #ddd; width: 100%; display: block; background: #fafafa;" />
-          </div>
-          <div style="font-size: 0.62rem; letter-spacing: 0.12em; color: #999; margin-top: 0.4rem; text-transform: uppercase;">ITERATION: #01 / SEED: 560897457</div>
-        </article>
+        <!-- Optional physical evidence. These figures remove themselves until the files are added. -->
+        <div class="optional-material-grid">
+          <figure><img src="assets/images/incision-source-drawing.jpg" alt="Source drawing designated for the Incision protocol" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Source drawing / physical surface</figcaption></figure>
+          <figure><img src="assets/images/incision-non-execution-declaration.jpg" alt="Dated declaration that the generated incision command would not be executed" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>Dated declaration of non-execution</figcaption></figure>
+        </div>
 
-        <article class="work-item" data-index="1" style="margin-bottom: 2.5rem;">
-          <div class="work-thumb">
-            <img src="assets/images/protocol-incision-02.png" alt="Protocol output #02 — Execution Protocol Incision" loading="lazy" style="border: 1px solid #ddd; width: 100%; display: block; background: #fafafa;" />
-          </div>
-          <div style="font-size: 0.62rem; letter-spacing: 0.12em; color: #999; margin-top: 0.4rem; text-transform: uppercase;">ITERATION: #02 / SEED: 425731348</div>
-        </article>
-
-        <article class="work-item" data-index="2" style="margin-bottom: 2.5rem;">
-          <div class="work-thumb">
-            <img src="assets/images/protocol-incision-03.png" alt="Protocol output #03 — Execution Protocol Incision" loading="lazy" style="border: 1px solid #ddd; width: 100%; display: block; background: #fafafa;" />
-          </div>
-          <div style="font-size: 0.62rem; letter-spacing: 0.12em; color: #999; margin-top: 0.4rem; text-transform: uppercase;">ITERATION: #03 / SEED: 3613020</div>
-        </article>
-
-        <article class="work-item" data-index="3" style="margin-bottom: 2.5rem;">
-          <div class="work-thumb">
-            <img src="assets/images/protocol-incision-04.png" alt="Protocol output #04 — Execution Protocol Incision" loading="lazy" style="border: 1px solid #ddd; width: 100%; display: block; background: #fafafa;" />
-          </div>
-          <div style="font-size: 0.62rem; letter-spacing: 0.12em; color: #999; margin-top: 0.4rem; text-transform: uppercase;">ITERATION: #04 / SEED: 37363734</div>
-        </article>
-
+        <article class="work-item" data-index="0" style="margin-bottom:2.5rem;"><div class="work-thumb"><img src="assets/images/protocol-incision-01.png" alt="Incision protocol output 01: source, execution map, and fragmented preview" loading="lazy" style="border:1px solid #ddd; width:100%; display:block; background:#fafafa;" /></div><div style="font-size:.62rem; letter-spacing:.12em; color:#999; margin-top:.4rem; text-transform:uppercase;">ITERATION: #01 / SEED: 560897457</div></article>
+        <article class="work-item" data-index="1" style="margin-bottom:2.5rem;"><div class="work-thumb"><img src="assets/images/protocol-incision-02.png" alt="Incision protocol output 02: source, execution map, and fragmented preview" loading="lazy" style="border:1px solid #ddd; width:100%; display:block; background:#fafafa;" /></div><div style="font-size:.62rem; letter-spacing:.12em; color:#999; margin-top:.4rem; text-transform:uppercase;">ITERATION: #02 / SEED: 425731348</div></article>
+        <article class="work-item" data-index="2" style="margin-bottom:2.5rem;"><div class="work-thumb"><img src="assets/images/protocol-incision-03.png" alt="Incision protocol output 03: source, execution map, and fragmented preview" loading="lazy" style="border:1px solid #ddd; width:100%; display:block; background:#fafafa;" /></div><div style="font-size:.62rem; letter-spacing:.12em; color:#999; margin-top:.4rem; text-transform:uppercase;">ITERATION: #03 / SEED: 3613020</div></article>
+        <article class="work-item" data-index="3" style="margin-bottom:2.5rem;"><div class="work-thumb"><img src="assets/images/protocol-incision-04.png" alt="Incision protocol output 04: source, execution map, and fragmented preview" loading="lazy" style="border:1px solid #ddd; width:100%; display:block; background:#fafafa;" /></div><div style="font-size:.62rem; letter-spacing:.12em; color:#999; margin-top:.4rem; text-transform:uppercase;">ITERATION: #04 / SEED: 37363734</div></article>
       </div>
 
-      <!-- Vertical divider -->
-      <div style="width: 1px; background: var(--border-color, #eee); flex-shrink: 0; min-height: 100%;"></div>
+      <div style="width:1px; background:var(--border-color,#eee); flex-shrink:0; min-height:100%;"></div>
 
-      <!-- Right side: Process text (sticky) -->
-      <div class="works-process" style="flex: 1.2; min-width: 300px; position: sticky; top: 80px; align-self: flex-start; display: flex; flex-direction: column; padding: 2rem; box-sizing: border-box; max-height: calc(100vh - 80px); overflow-y: auto;">
-        <button class="lang-toggle" aria-label="Toggle language" style="z-index: 10;">JP</button>
-        <h2 style="margin-bottom: 0.3rem; font-size: 1.2rem; letter-spacing: 0.1em;">
-          Series 2: Execution Protocol — Incision
-        </h2>
-        <div style="font-family: var(--font-serif); font-style: italic; font-size: 0.85rem; color: var(--ink-muted); border-bottom: 1px solid var(--border-color, #eee); padding-bottom: 0.8rem; margin-bottom: 1.2rem; padding-right: 2rem;">
-          Completed as Specification — Never to be Executed
+      <div class="works-process" style="flex:1.2; min-width:300px; position:sticky; top:80px; align-self:flex-start; display:flex; flex-direction:column; padding:2rem; box-sizing:border-box;">
+        <button class="lang-toggle" aria-label="Toggle language" style="z-index:10;">JP</button>
+        <h1 class="series__title">Series 2: Execution Protocol — Incision</h1>
+        <p class="series__sub">Specification Archived; Execution Withheld</p>
+        <hr class="series__rule">
+
+        <div class="process-step">
+          <h3 class="en">Overview</h3><h3 class="jp">概要</h3>
+          <p class="en">A set of generated specifications for cutting and reassembling an existing drawing. Each output preserves the source image, incision map, colour-bar coordinates, and seed value.</p>
+          <p class="jp">既存の細密画を切断し、再構成するために生成された仕様群。各出力は、元画像、切断図、カラーバーの座標、シード値を保存する。</p>
         </div>
 
         <div class="process-step">
-          <h3 class="en">Overview</h3>
-          <h3 class="jp">概要</h3>
-          <p class="en">A generative system for the physical destruction of images. It calculates edge-to-edge incisions and the absolute placement of completely independent color bars to dictate a physical collage execution.</p>
-          <p class="jp">画像の物理的な破壊のための生成システム。画面の端から端までの自律的な直線の切断と、それらから完全に独立した座標へのカラーバーの配置を算出し指示します。</p>
+          <h3 class="en">The Procedure</h3><h3 class="jp">手続き</h3>
+          <p class="en">The generator calculates edge-to-edge cuts across the image and assigns independent positions for colour bars. The same hand that produced the drawing would be required to carry out the cuts.</p>
+          <p class="jp">ジェネレーターは画像を端から端まで横断する切断線と、独立したカラーバーの位置を算出する。描画を制作した同じ手が、その切断を実行することを要求される。</p>
         </div>
 
         <div class="process-step">
-          <h3 class="en">Concept</h3>
-          <h3 class="jp">概念</h3>
-          <p class="jp">「Execution Protocol — Incision」は、デジタルグリッチやアルゴリズムによる暴力を、直接的に物理的な領域へ持ち込むために設計されたプロセスです。破壊の段階において制作者の意図を完全に放棄し、厳密な数学的プロトコルのみに依存して、紙上の細密画や写真がどのように切断され、再構築されるかを決定します。細密画を生み出すために労働したその同じ手に、今度はその破壊の遂行が命じられる——労働者と管理者が決して分離されることのない、自己管理のショートサーキットです。命令は発行された。実行されないまま、留まる。</p>
-          <p class="en">The "Execution Protocol — Incision" is a generative system designed to transfer the concept of digital glitch and algorithmic violence directly into the physical realm. By abandoning artistic authorship during the destruction phase, this project relies on a forged protocol that presents itself as strictly mathematical to determine how a physical drawing or photograph is dismantled and reconstructed. The hand that labored to produce the drawing is the same hand the protocol commands to destroy it — a short-circuit of self-management where the worker and the manager are never separated. The command has been issued. It remains unexecuted.</p>
-        </div>
-
-        <div class="process-step">
-          <h3 class="en">The Operation</h3>
-          <h3 class="jp">実行手段</h3>
-          <p class="jp">JPEGのバイト単位のデータを操作していた以前のプロジェクトとは異なり、このシステムはアナログな平面を直接の処理キャンバスとして扱います。ジェネレーターは画面の端から端を突き抜ける自律的な直線切断を算出し、同時に、切断された結果を一切考慮せずに完全に独立した座標へ、特定のカラーバーを物理的に配置する指示を出力します。</p>
-          <p class="en">In contrast to previous iterations that manipulated JPEG byte streams, this system treats the analog surface as its operational canvas. The generator calculates autonomous, edge-to-edge incisions across the image. Randomly selected color bars (derived from physical cutting sheet palettes) are subsequently assigned absolute coordinate positions overlaying the newly fragmented structure.</p>
+          <h3 class="en">Non-execution</h3><h3 class="jp">非実行</h3>
+          <p class="en">The commands were not carried out. The source drawing remains intact, while the generated maps and the dated declaration preserve the point at which execution was withheld.</p>
+          <p class="jp">命令は実行されなかった。元の細密画は損なわれず、生成図と日付を持つ非実行宣言が、実行を留保した時点を保存する。</p>
         </div>
 
         <div class="non-execution-notice">
-          <div class="ne-title">The Unexecuted Command / 実行されない命令</div>
-          <p class="en" style="font-size:0.85rem; line-height:1.7;">The cuts would shatter the drawn surface; the color tape would be blindly applied according to the coordinates. The incision is not carried out. The coordinates remain without a destination. What exists is the indifferent command log, and nothing else.</p>
-          <p class="jp" style="font-size:0.82rem; line-height:1.85;">直線による切断は描かれた図像を物理的に破砕し、カラーテープは座標指示のみに従って盲目的に貼り付けられる——はずだった。切断は行われない。座標は宛先のないまま残る。ここに存在するのは、無関心なコマンドログのみである。</p>
+          <div class="ne-title">What exists / 現存するもの</div>
+          <p class="en" style="font-size:.85rem; line-height:1.7;">The source drawing, four generated execution maps, their seed values, and the dated declaration of non-execution. The work is the preserved relation between an issued command and an intact surface.</p>
+          <p class="jp" style="font-size:.82rem; line-height:1.85;">元の細密画、四つの実行図、そのシード値、日付を持つ非実行宣言。作品として保存されるのは、発行された命令と、損なわれていない表面との関係である。</p>
         </div>
 
-        <!-- Series links -->
-        <hr style="border: none; border-top: 1px solid #ccc; width: 40px; margin: 2.5rem 0 1.2rem 0;">
-        <p style="margin: 0 0 0.5rem 0; text-align: left; font-size: 0.95rem; letter-spacing: 0.05em;">
-          <a href="works.html" style="text-decoration: underline; text-underline-offset: 4px; color: #333; font-weight: 500;">→ Series 1: Execution Protocol — Overlay</a>
-        </p>
-        <p style="margin: 0; text-align: left; font-size: 0.95rem; letter-spacing: 0.05em;">
-          <a href="fragment.html" style="text-decoration: underline; text-underline-offset: 4px; color: #333; font-weight: 500;">→ Series 3: Execution Protocol — Fragment</a>
-        </p>
+        <nav class="series-nav">
+          <a href="works.html">Series 1: Execution Protocol — Overlay</a>
+          <a href="fragment.html">Series 3: Execution Protocol — Fragment</a>
+          <a href="statement.html">Statement</a>
+        </nav>
       </div>
-
     </section>
-
   </main>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#10005;</button>
-    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
-    <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
-    <div class="lightbox-inner">
-      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
-      <div class="lightbox-caption">
-        <span class="lightbox-title" id="lightboxTitle"></span>
-        <span class="lightbox-year" id="lightboxYear"></span>
-      </div>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <span>&copy; <span id="year"></span> Takenori Maeda</span>
-  </footer>
-
+  <footer class="site-footer"><span>&copy; <span id="year"></span> Takenori Maeda</span></footer>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
