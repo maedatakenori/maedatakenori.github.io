@@ -1,0 +1,84 @@
+{
+  "size": "F30",
+  "canvasW": 910,
+  "canvasH": 727,
+  "date": "2026-07-26",
+  "seedFormula": "SHA256( chainFinalHashes + \"|\" + photoFileHashes + \"|\" + date )",
+  "seedInput": "05737eaa6994010e43d9a48a1443dc87ceecd1212306a8e8133e88a66fc7c9de+383dd7d61c153b752ca46c54a0c9e8b41f72821ce3493d04c0555a83da098b35+3170c28e5302585419ced3b2f6f173c06c8a2841143e160312a26291d7c9d1f9+1ac257de6a4528ba07c585def1dab15e975173e3d5fa9cf7589570e4f7bb84e4+2a5092ade0fb46854d2929792add70faa812c9930baca6698bdab179afdb9dcc+2fe1dfb71bf9adf608e027d804d8fab3cb08b7f25f4f5a56f6f5e8314de019df|124337de58aeb98b762f156dbb11db1b7ccb395fb2f3f0e74ed5e3125734545c+f5e8aefff1868988a5228cb959f92f83dd343f4004dd555195fab56c46d1561d+c82240b824722ac8c3f8a3284b45449d8e8d80596a4c78f8950327931fba30d1+6324bb2da97c8f098a68a551ea28931d9161ffce80ccf00627300caca9948581+fc1754c254aee0c7e79579e8a4904b43281226b0a8f1e541593ff3564ee3cd7e+2c78ce2e8f22695ce194daf6c5a751f42beb43fb1880262007735726a215418d|2026-07-26",
+  "masterHash": "78cfa383fe1208a22658c136f14f3957461e40e6c299aef013d391aee6729204",
+  "placements": [
+    {
+      "id": "01",
+      "cx": 150.7,
+      "cy": 197.7,
+      "theta": 160,
+      "w": 200,
+      "h": 206,
+      "chainFinalHash": "05737eaa6994010e43d9a48a1443dc87ceecd1212306a8e8133e88a66fc7c9de",
+      "fileHash": "124337de58aeb98b762f156dbb11db1b7ccb395fb2f3f0e74ed5e3125734545c",
+      "sessions": 1,
+      "minutes": 20
+    },
+    {
+      "id": "02",
+      "cx": 212.9,
+      "cy": 189.1,
+      "theta": 115,
+      "w": 142,
+      "h": 334,
+      "chainFinalHash": "383dd7d61c153b752ca46c54a0c9e8b41f72821ce3493d04c0555a83da098b35",
+      "fileHash": "f5e8aefff1868988a5228cb959f92f83dd343f4004dd555195fab56c46d1561d",
+      "sessions": 7,
+      "minutes": 161
+    },
+    {
+      "id": "03+Α01",
+      "cx": 724.1,
+      "cy": 555.3,
+      "theta": 92,
+      "w": 163,
+      "h": 210,
+      "chainFinalHash": "3170c28e5302585419ced3b2f6f173c06c8a2841143e160312a26291d7c9d1f9",
+      "fileHash": "c82240b824722ac8c3f8a3284b45449d8e8d80596a4c78f8950327931fba30d1",
+      "sessions": 5,
+      "minutes": 113
+    },
+    {
+      "id": "04",
+      "cx": 167.4,
+      "cy": 136.1,
+      "theta": 128,
+      "w": 215,
+      "h": 348,
+      "chainFinalHash": "1ac257de6a4528ba07c585def1dab15e975173e3d5fa9cf7589570e4f7bb84e4",
+      "fileHash": "6324bb2da97c8f098a68a551ea28931d9161ffce80ccf00627300caca9948581",
+      "sessions": 5,
+      "minutes": 135
+    },
+    {
+      "id": "05",
+      "cx": 301.2,
+      "cy": 286.9,
+      "theta": 175,
+      "w": 223,
+      "h": 211,
+      "chainFinalHash": "2a5092ade0fb46854d2929792add70faa812c9930baca6698bdab179afdb9dcc",
+      "fileHash": "fc1754c254aee0c7e79579e8a4904b43281226b0a8f1e541593ff3564ee3cd7e",
+      "sessions": 6,
+      "minutes": 131
+    },
+    {
+      "id": "06",
+      "cx": 385.3,
+      "cy": 50.9,
+      "theta": 289,
+      "w": 135,
+      "h": 251,
+      "chainFinalHash": "2fe1dfb71bf9adf608e027d804d8fab3cb08b7f25f4f5a56f6f5e8314de019df",
+      "fileHash": "2c78ce2e8f22695ce194daf6c5a751f42beb43fb1880262007735726a215418d",
+      "sessions": 5,
+      "minutes": 86
+    }
+  ],
+  "verifyHash": "68c773e5c6e1e149a7d3c50ddd85c47aa550fb6ece2a882d0806a4400a180fdf"
+}
