@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Series 3: Execution Protocol — Fragment / Takenori Maeda</title>
-<meta name="description" content="Execution Protocol — Fragment by Takenori Maeda: hand-drawing, manual calibration, chained records, generated composition, and operator-detected verification failure.">
+<meta name="description" content="Execution Protocol — Fragment by Takenori Maeda: hand-drawn fragments, chained records, verification failure, and archive states regenerated whenever a new fragment is completed.">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,7 @@
     border-right:1px solid #ddd;
   }
   .fragment-top .fragment__right {
+    position:relative !important;
     padding:2rem 3rem 3rem;
   }
   .archive-state-note {
@@ -166,11 +167,83 @@
     letter-spacing:.1em;
     text-transform:uppercase;
   }
+  .state-grid {
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:1.4rem;
+    align-items:start;
+  }
+  .state-card {
+    min-width:0;
+    border-top:1px solid #777;
+    padding-top:.85rem;
+  }
+  .state-card--current { border-top:2px solid #222; }
+  .state-card__head {
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    margin-bottom:.75rem;
+  }
+  .state-card__title {
+    margin:0;
+    font-size:.72rem;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+  }
+  .state-card__status {
+    flex:0 0 auto;
+    border:1px solid #aaa;
+    padding:.12rem .35rem;
+    font-size:.58rem;
+    letter-spacing:.14em;
+  }
+  .state-card--current .state-card__status { border-color:#222; }
+  .state-card figure { margin:0; }
+  .state-card img {
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    border:1px solid #333;
+    background:#080808;
+  }
+  .state-card__meta {
+    margin:.75rem 0 0;
+    font-size:.68rem;
+    line-height:1.65;
+    letter-spacing:.04em;
+  }
+  .state-card__caption {
+    margin:.75rem 0 0;
+    font-size:.72rem;
+    line-height:1.65;
+    color:#555;
+  }
+  .state-card__hash {
+    margin:.75rem 0 0;
+    font-size:.58rem;
+    line-height:1.55;
+    color:#777;
+  }
+  .state-card__hash code {
+    display:block;
+    overflow-wrap:anywhere;
+    color:#333;
+  }
+  .state-downloads { margin-top:.8rem; }
+  .archive-verification-scope {
+    margin:0 0 1.4rem;
+    font-size:.72rem;
+    line-height:1.6;
+    color:#555;
+  }
   @media (max-width:900px) {
     .fragment-top { grid-template-columns:1fr; }
     .fragment-top .fragment__left { border-right:0; border-bottom:1px solid #ddd; }
     .fragment-top .fragment__right { padding:2rem; }
-    .record-grid, .process-grid { grid-template-columns:1fr; }
+    .record-grid, .process-grid, .state-grid { grid-template-columns:1fr; }
     .fragment-section { padding:2.4rem 1.2rem; }
   }
 </style>
@@ -193,32 +266,41 @@
     <div class="fragment__left">
       <p class="spec-line"><b>Series:</b> Execution Protocol — Fragment</p>
       <p class="spec-line"><b>Status:</b> Ongoing</p>
-      <p class="spec-line"><b>Archive state 01:</b> F01, F02, F03+α01, F04, F05</p>
-      <p class="spec-line"><b>Sessions:</b> 24</p>
-      <p class="spec-line"><b>Labour:</b> 560 minutes recorded</p>
-      <p class="spec-line"><b>Period:</b> 2026-05-21 — 2026-07-06</p>
-      <p class="spec-line spec-line--muted">Archive sealed 2026-07-21T01:13:18</p>
+      <div class="en-only">
+        <p class="spec-line"><b>Current archive state:</b> 03</p>
+        <p class="spec-line"><b>Fragments:</b> F01–F07</p>
+        <p class="spec-line"><b>Sessions:</b> 37</p>
+        <p class="spec-line"><b>Labour:</b> 770 minutes recorded</p>
+        <p class="spec-line"><b>Generated composition:</b> 2026-08-06</p>
+        <p class="spec-line spec-line--muted"><b>Field:</b> F30 / 910 × 727 mm</p>
+      </div>
+      <div class="jp-only">
+        <p class="spec-line"><b>現在のアーカイブ状態：</b>03</p>
+        <p class="spec-line"><b>Fragment：</b>F01〜F07</p>
+        <p class="spec-line"><b>セッション：</b>37</p>
+        <p class="spec-line"><b>記録労働時間：</b>770分</p>
+        <p class="spec-line"><b>構成生成日：</b>2026年8月6日</p>
+        <p class="spec-line spec-line--muted"><b>フィールド：</b>F30 / 910 × 727 mm</p>
+      </div>
 
       <p class="archive-state-note en-only">
-        This page preserves the first sealed five-chain archive. F06 was completed on 26 July 2026 and belongs to a later state; it is not retroactively inserted here.
+        A newly completed fragment does not occupy an available position. Its inclusion regenerates the composition of the entire archive. Earlier states are not overwritten; they remain sealed as historical states.
       </p>
       <p class="archive-state-note jp-only">
-        このページは、最初に封印された五つのチェーンによるアーカイブを保存する。F06は2026年7月26日に完了し、後続する別の状態に属するため、ここには遡及的に挿入しない。
+        新しく完了したFragmentは、空いている位置へ追加されるのではない。その追加によって、アーカイブ全体の構成が再生成される。以前の状態は上書きされず、封印された歴史として保存される。
       </p>
 
-      <p class="section-label">Generated composition — archive state 01</p>
+      <p class="section-label">Generated composition — archive state 03</p>
       <figure class="composition-figure">
         <img
-          src="assets/images/fragment-composition-s100-2026-07-21.png?v=20260801-2"
-          alt="Generated composition of Archive State 01 containing F01 to F05 on an S100 field"
-          width="960"
-          height="680"
+          src="assets/images/composition_F30_2026-08-06.png"
+          alt="Generated composition of Archive State 03 containing F01 to F07 on an F30 field"
           fetchpriority="high">
         <figcaption class="figure-caption en-only">
-          Archive State 01 — S100, 1620 × 1620 mm, 21 July 2026. Generated from the measured dimensions, final chain hashes, photograph file hashes, and execution date of F01–F05.
+          Archive State 03 — F30, 910 × 727 mm, 6 August 2026. The completion of F07 regenerated the position of all seven fragments from their measured dimensions, final chain hashes, photograph file hashes, and the generation date. Generated composition; not physically assembled.
         </figcaption>
         <figcaption class="figure-caption jp-only">
-          アーカイブ状態01――S100、1620 × 1620 mm、2026年7月21日。F01〜F05の測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、実行日から生成された構成。
+          アーカイブ状態03――F30、910 × 727 mm、2026年8月6日。F07の完了により、七つすべてのFragmentの位置が、測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、生成日から再生成された。生成された構成であり、物理的に組み立てられた状態ではない。
         </figcaption>
       </figure>
     </div>
@@ -253,10 +335,10 @@
       </div>
 
       <div class="language-copy">
-        <h2 class="series__h en-only">Temporary composition</h2>
-        <h2 class="series__h jp-only">一時的な構成</h2>
-        <p class="en-only">This composition belongs to one date, one set of five chains, and one completed calibration. It is reproducible, but not final. A later fragment or a newly established input produces another state without erasing this one.</p>
-        <p class="jp-only">この構成は、一つの日付、五つのチェーン、一度の完了した校正に属する。再現可能だが最終形ではない。後のFragment、または新たに確定された入力は、この状態を消去せずに別の状態を生む。</p>
+        <h2 class="series__h en-only">Archive state transition</h2>
+        <h2 class="series__h jp-only">アーカイブ状態の遷移</h2>
+        <p class="en-only">Each archive state belongs to one generation date and one set of completed fragment chains. When a new fragment is completed, it is not inserted into an existing empty position. The measured dimensions, final chain hashes, photograph file hashes, and generation date produce a new seed, and the positions of every fragment are recalculated. The previous state remains sealed rather than being replaced.</p>
+        <p class="jp-only">各Archive Stateは、一つの生成日と、その時点で完了していたFragmentチェーンの集合に属する。新しいFragmentが完了しても、既存構成の空いた位置へ挿入されるのではない。測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、生成日から新しいシードが生じ、すべてのFragmentの位置が再計算される。以前の状態は置き換えられず、封印されたまま残る。</p>
       </div>
 
       <div class="language-copy">
@@ -265,6 +347,73 @@
         <p class="en-only">The protocol was written by the same hand it commands. Verification can confirm consistency among recorded inputs; it cannot prove that the input referred to the correct image or that the record was true. F05 marks the point where the operator identified what formal verification had passed.</p>
         <p class="jp-only">プロトコルは、それが命じる同じ手によって書かれた。検証は記録された入力同士の整合性を確認できるが、その入力が正しい画像を参照していたことや、記録が真実だったことまでは証明できない。F05は、形式的な検証が通過させたものを操作者が発見した地点を示す。</p>
       </div>
+    </div>
+  </section>
+
+  <section class="fragment-section" id="archive-state-history">
+    <div class="fragment-section__intro">
+      <p class="section-label">Archive state history</p>
+      <p class="en-only">These are not cumulative collages. Each completed fragment changes the input set and causes the entire composition to be generated again.</p>
+      <p class="jp-only">これらは、既存構成へ要素を足していく累積的なコラージュではない。Fragmentが一つ完了するたびに入力集合が変わり、構成全体が再生成される。</p>
+    </div>
+
+    <div class="state-grid">
+      <article class="state-card state-card--sealed">
+        <div class="state-card__head">
+          <h2 class="state-card__title">Archive State 01 · F01–F05</h2>
+          <span class="state-card__status">SEALED</span>
+        </div>
+        <figure>
+          <img src="assets/images/fragment-composition-s100-2026-07-21.png" alt="Archive State 01 generated composition containing F01 to F05" loading="lazy">
+          <figcaption>
+            <p class="state-card__meta">Generated 21 July 2026<br>S100 / 1620 × 1620 mm<br>24 sessions / 560 minutes</p>
+            <p class="state-card__caption en-only">The first sealed five-fragment state. Its composition remains historically fixed and is not retroactively altered by F06 or F07.</p>
+            <p class="state-card__caption jp-only">最初に封印された五つのFragmentによる状態。F06とF07の完了後も、この構成は遡及的に変更されず、その時点の歴史として固定される。</p>
+          </figcaption>
+        </figure>
+        <p class="state-card__hash">MASTER HASH<code>b41f7be399126755f7f363d175c7a3ab0a396f642998029a3070adc1fb34ef1a</code>VERIFY HASH<code>7e4935b1cdf63e83f9a3acc421082aaa03e1764860475f7d96716a87c8402494</code></p>
+        <div class="state-downloads">
+          <a class="download-data" href="assets/data/composition_S100_2026-07-21.json" download><span class="en-only">Download State 01 JSON</span><span class="jp-only">State 01 JSONをダウンロード</span></a>
+        </div>
+      </article>
+
+      <article class="state-card state-card--sealed">
+        <div class="state-card__head">
+          <h2 class="state-card__title">Archive State 02 · F01–F06</h2>
+          <span class="state-card__status">SEALED</span>
+        </div>
+        <figure>
+          <img src="assets/images/composition_F30_2026-07-26.png" alt="Archive State 02 generated composition containing F01 to F06" loading="lazy">
+          <figcaption>
+            <p class="state-card__meta">Generated 26 July 2026<br>F30 / 910 × 727 mm<br>29 sessions / 646 minutes</p>
+            <p class="state-card__caption en-only">The completion of F06 produced a new seed and regenerated the position of all six fragments. State 01 remains sealed as a separate historical state.</p>
+            <p class="state-card__caption jp-only">F06の完了により新しいシードが生成され、六つすべてのFragmentの位置が再生成された。State 01は別の歴史的状態として封印されたまま残る。</p>
+          </figcaption>
+        </figure>
+        <p class="state-card__hash">MASTER HASH<code>78cfa383fe1208a22658c136f14f3957461e40e6c299aef013d391aee6729204</code>VERIFY HASH<code>68c773e5c6e1e149a7d3c50ddd85c47aa550fb6ece2a882d0806a4400a180fdf</code></p>
+        <div class="state-downloads">
+          <a class="download-data" href="assets/data/composition_F30_2026-07-26.json" download><span class="en-only">Download State 02 JSON</span><span class="jp-only">State 02 JSONをダウンロード</span></a>
+        </div>
+      </article>
+
+      <article class="state-card state-card--current">
+        <div class="state-card__head">
+          <h2 class="state-card__title">Archive State 03 · F01–F07</h2>
+          <span class="state-card__status">CURRENT</span>
+        </div>
+        <figure>
+          <img src="assets/images/composition_F30_2026-08-06.png" alt="Archive State 03 generated composition containing F01 to F07" loading="lazy">
+          <figcaption>
+            <p class="state-card__meta">Generated 6 August 2026<br>F30 / 910 × 727 mm<br>37 sessions / 770 minutes</p>
+            <p class="state-card__caption en-only">The completion of F07 produced another seed and regenerated the position of all seven fragments. The image is a generated composition, not a photograph of a physically assembled arrangement.</p>
+            <p class="state-card__caption jp-only">F07の完了により別のシードが生成され、七つすべてのFragmentの位置が再生成された。この画像は生成された構成であり、物理的に組み立てられた配置の写真ではない。</p>
+          </figcaption>
+        </figure>
+        <p class="state-card__hash">MASTER HASH<code>a47f366edd84574393ff371beb4a4f9434df0b064a3c100f44dce25a8b1dbf72</code>VERIFY HASH<code>3ba0f3de19d42c90a8aacc03ca6178245b375f52a23b363f7159a0c985a31748</code></p>
+        <div class="state-downloads">
+          <a class="download-data" href="assets/data/composition_F30_2026-08-06.json" download><span class="en-only">Download State 03 JSON</span><span class="jp-only">State 03 JSONをダウンロード</span></a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -333,6 +482,8 @@
       <details class="archive-data">
         <summary>Archive data — session chains, verification, and recorded anomalies</summary>
         <div class="archive-data__body">
+          <p class="archive-verification-scope en-only">Browser verification dataset — Archive State 01 (F01–F05)</p>
+          <p class="archive-verification-scope jp-only">ブラウザ内検証データ――Archive State 01（F01〜F05）</p>
           <!-- Retained for fragment.js compatibility; the new official composition is the PNG above. -->
           <figure class="hidden-reproduction" aria-hidden="true">
             <div class="comp__svg" id="comp"></div>
@@ -372,7 +523,7 @@
             <p class="anom__principle jp-only">誤りは訂正されない。記録される。</p>
           </section>
 
-          <a class="download-data" href="assets/data/composition_S100_2026-07-21.json" download>Download composition JSON</a>
+          <a class="download-data" href="assets/data/composition_S100_2026-07-21.json" download><span class="en-only">Download State 01 JSON</span><span class="jp-only">State 01 JSONをダウンロード</span></a>
         </div>
       </details>
 
