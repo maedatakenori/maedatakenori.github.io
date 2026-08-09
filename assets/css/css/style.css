@@ -582,39 +582,44 @@ body.show-jp .statement-block[lang="en"] {
    ============================================================ */
 .series-nav{
   margin: 56px 0 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #e2e2e2;
 }
 .series-nav a{
   display: block;
   padding: 11px 0 10px;
-  border-bottom: 1px solid var(--border);
-  color: var(--ink);
+  border-bottom: 1px solid #e2e2e2;
+  color: #666;
   text-decoration: none;
-  font-size: 1rem;
-  line-height: 1.4;
-  transition: color .18s ease, border-color .18s ease;
+  font-family: var(--font-serif, "EB Garamond", serif);
+  font-size: .82rem;
+  font-weight: 400;
+  letter-spacing: .015em;
+  line-height: 1.5;
+  transition: color 180ms ease, padding-left 180ms ease;
 }
 .series-nav a::before{
   content: "→";
   display: inline-block;
   width: 1.5em;
-  color: var(--ink-muted);
-  transition: color .18s ease, transform .18s ease;
+  color: #999;
+  transition: color 180ms ease;
 }
-.series-nav a:hover{
-  border-bottom-color: var(--ink);
+.series-nav a:hover,
+.series-nav a:focus-visible{
+  color: #965f59;
+  padding-left: 2px;
 }
-.series-nav a:hover::before{
-  color: var(--ink);
-  transform: translateX(2px);
+.series-nav a:hover::before,
+.series-nav a:focus-visible::before{
+  color: #965f59;
 }
 .series-nav a:focus-visible{
-  outline: 1px solid var(--ink);
+  outline: 1px solid #965f59;
   outline-offset: 3px;
 }
 @media (prefers-reduced-motion: reduce){
   .series-nav a, .series-nav a::before{ transition: none; }
-  .series-nav a:hover::before{ transform: none; }
+  .series-nav a:hover, .series-nav a:focus-visible{ padding-left: 0; }
 }
 
 
