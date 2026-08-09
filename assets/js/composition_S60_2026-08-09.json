@@ -1,0 +1,108 @@
+{
+  "size": "S60",
+  "canvasW": 1303,
+  "canvasH": 1303,
+  "date": "2026-08-09",
+  "seedFormula": "SHA256( chainFinalHashes + \"|\" + photoFileHashes + \"|\" + date )",
+  "seedInput": "05737eaa6994010e43d9a48a1443dc87ceecd1212306a8e8133e88a66fc7c9de+383dd7d61c153b752ca46c54a0c9e8b41f72821ce3493d04c0555a83da098b35+3170c28e5302585419ced3b2f6f173c06c8a2841143e160312a26291d7c9d1f9+1ac257de6a4528ba07c585def1dab15e975173e3d5fa9cf7589570e4f7bb84e4+2a5092ade0fb46854d2929792add70faa812c9930baca6698bdab179afdb9dcc+2fe1dfb71bf9adf608e027d804d8fab3cb08b7f25f4f5a56f6f5e8314de019df+284f3f222dbb5399c909da6aab84fb04a9d16f776b82f0e452892d5b9f7d072c+1607966cfa67eaf41645ee244cb00a901788c3076eb6e35cccc0813e08c2f5ff|8cd7c93f169e613e5925bf1243185d73c2b8d2b09cac9ca6e0e7269fcdcbea5c+f5e8aefff1868988a5228cb959f92f83dd343f4004dd555195fab56c46d1561d+c0750933c0115fb2cb9f2d38381e6ded541cd60db0230df961c5f633ff0e41d3+6324bb2da97c8f098a68a551ea28931d9161ffce80ccf00627300caca9948581+704040a9ebed8195b2b7019bb07e8117be24c37c7a6a4d59f3a3d3c7614a3373+2c78ce2e8f22695ce194daf6c5a751f42beb43fb1880262007735726a215418d+a78a7781fae9b7d7d819eac93ec171aac623403d01517e680b8efaa3fb8ac217+b5fb17388436569702065ed2a5bbd0c25029b4033bf2417174852b85c8e3bab3|2026-08-09",
+  "masterHash": "a85fb626d92eac8a280a81a6a4dd59c7778c47a6afc9440074ff3b40bda959bd",
+  "placements": [
+    {
+      "id": "01",
+      "cx": 119.9,
+      "cy": 1203.9,
+      "theta": 101,
+      "w": 201,
+      "h": 209,
+      "chainFinalHash": "05737eaa6994010e43d9a48a1443dc87ceecd1212306a8e8133e88a66fc7c9de",
+      "fileHash": "8cd7c93f169e613e5925bf1243185d73c2b8d2b09cac9ca6e0e7269fcdcbea5c",
+      "sessions": 1,
+      "minutes": 20
+    },
+    {
+      "id": "02",
+      "cx": 901.9,
+      "cy": 505.4,
+      "theta": 217,
+      "w": 147,
+      "h": 336,
+      "chainFinalHash": "383dd7d61c153b752ca46c54a0c9e8b41f72821ce3493d04c0555a83da098b35",
+      "fileHash": "f5e8aefff1868988a5228cb959f92f83dd343f4004dd555195fab56c46d1561d",
+      "sessions": 7,
+      "minutes": 161
+    },
+    {
+      "id": "03+Α01",
+      "cx": 43,
+      "cy": 747.3,
+      "theta": 266,
+      "w": 158,
+      "h": 219,
+      "chainFinalHash": "3170c28e5302585419ced3b2f6f173c06c8a2841143e160312a26291d7c9d1f9",
+      "fileHash": "c0750933c0115fb2cb9f2d38381e6ded541cd60db0230df961c5f633ff0e41d3",
+      "sessions": 5,
+      "minutes": 113
+    },
+    {
+      "id": "04",
+      "cx": 740.9,
+      "cy": 1081.1,
+      "theta": 325,
+      "w": 221,
+      "h": 356,
+      "chainFinalHash": "1ac257de6a4528ba07c585def1dab15e975173e3d5fa9cf7589570e4f7bb84e4",
+      "fileHash": "6324bb2da97c8f098a68a551ea28931d9161ffce80ccf00627300caca9948581",
+      "sessions": 5,
+      "minutes": 135
+    },
+    {
+      "id": "05",
+      "cx": 580,
+      "cy": 1066.8,
+      "theta": 89,
+      "w": 220,
+      "h": 225,
+      "chainFinalHash": "2a5092ade0fb46854d2929792add70faa812c9930baca6698bdab179afdb9dcc",
+      "fileHash": "704040a9ebed8195b2b7019bb07e8117be24c37c7a6a4d59f3a3d3c7614a3373",
+      "sessions": 6,
+      "minutes": 131
+    },
+    {
+      "id": "06",
+      "cx": 1056,
+      "cy": 286,
+      "theta": 69,
+      "w": 147,
+      "h": 270,
+      "chainFinalHash": "2fe1dfb71bf9adf608e027d804d8fab3cb08b7f25f4f5a56f6f5e8314de019df",
+      "fileHash": "2c78ce2e8f22695ce194daf6c5a751f42beb43fb1880262007735726a215418d",
+      "sessions": 5,
+      "minutes": 86
+    },
+    {
+      "id": "07",
+      "cx": 890.4,
+      "cy": 599.9,
+      "theta": 85,
+      "w": 252,
+      "h": 262,
+      "chainFinalHash": "284f3f222dbb5399c909da6aab84fb04a9d16f776b82f0e452892d5b9f7d072c",
+      "fileHash": "a78a7781fae9b7d7d819eac93ec171aac623403d01517e680b8efaa3fb8ac217",
+      "sessions": 8,
+      "minutes": 124
+    },
+    {
+      "id": "08",
+      "cx": 644.6,
+      "cy": 1230.7,
+      "theta": 311,
+      "w": 195,
+      "h": 202,
+      "chainFinalHash": "1607966cfa67eaf41645ee244cb00a901788c3076eb6e35cccc0813e08c2f5ff",
+      "fileHash": "b5fb17388436569702065ed2a5bbd0c25029b4033bf2417174852b85c8e3bab3",
+      "sessions": 3,
+      "minutes": 46
+    }
+  ],
+  "verifyHash": "e41455c4012403d147efbdf9436038b987c9ee37cdcdc08d7d7db13124bb1728"
+}
