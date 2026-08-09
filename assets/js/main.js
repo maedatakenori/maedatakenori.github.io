@@ -111,12 +111,19 @@ document.querySelectorAll('#year').forEach(el => {
   }, { passive: true });
 })();
 
-// Language toggle
-document.querySelectorAll('.lang-toggle').forEach(btn => {
+// Language toggle — the button label names the language currently displayed.
+const languageToggles = document.querySelectorAll('.lang-toggle');
+
+function syncLanguageToggleLabels() {
+  const currentLanguage = document.body.classList.contains('show-jp') ? 'JP' : 'EN';
+  languageToggles.forEach(btn => btn.textContent = currentLanguage);
+}
+
+languageToggles.forEach(btn => {
   btn.addEventListener('click', () => {
     document.body.classList.toggle('show-jp');
-    // Sync all toggle buttons on the page
-    const newText = document.body.classList.contains('show-jp') ? 'EN' : 'JP';
-    document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = newText);
+    syncLanguageToggleLabels();
   });
 });
+
+syncLanguageToggleLabels();
