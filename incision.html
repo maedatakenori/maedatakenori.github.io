@@ -17,7 +17,10 @@
     .optional-material-grid figcaption { margin-top:.45rem; font-size:.65rem; letter-spacing:.08em; color:#888; }
     .non-execution-notice { border:1px dashed var(--border,#ccc); padding:1.2rem 1.4rem; margin-top:1rem; }
     .non-execution-notice .ne-title { font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); margin-bottom:.5rem; }
-    @media (max-width:760px) { .works-process { position:static !important; } .optional-material-grid { grid-template-columns:1fr; } }
+    .non-execution-notice p.jp { display:none; }
+    body.show-jp .non-execution-notice p.en { display:none; }
+    body.show-jp .non-execution-notice p.jp { display:block; }
+    @media (max-width:760px) { .works-process { position:relative !important; top:auto !important; } .optional-material-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body class="page-works">
