@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Shippori+Mincho:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
-  /* Fragment page revision — 2026-08-01 */
+  /* Fragment page revision — 2026-08-09 */
   :root {
     --fragment-header-offset: 50px;
   }
@@ -169,7 +169,7 @@
   }
   .state-grid {
     display:grid;
-    grid-template-columns:repeat(3, minmax(0, 1fr));
+    grid-template-columns:repeat(4, minmax(0, 1fr));
     gap:1.4rem;
     align-items:start;
   }
@@ -232,12 +232,21 @@
     overflow-wrap:anywhere;
     color:#333;
   }
-  .state-downloads { margin-top:.8rem; }
+  .state-downloads {
+    display:flex;
+    flex-wrap:wrap;
+    gap:.35rem 1rem;
+    margin-top:.8rem;
+  }
+  .state-downloads .download-data { margin-top:0; }
   .archive-verification-scope {
     margin:0 0 1.4rem;
     font-size:.72rem;
     line-height:1.6;
     color:#555;
+  }
+  @media (max-width:1100px) {
+    .state-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width:900px) {
     .fragment-top { grid-template-columns:1fr; }
@@ -267,40 +276,40 @@
       <p class="spec-line"><b>Series:</b> Execution Protocol — Fragment</p>
       <p class="spec-line"><b>Status:</b> Ongoing</p>
       <div class="en-only">
-        <p class="spec-line"><b>Current archive state:</b> 03</p>
-        <p class="spec-line"><b>Fragments:</b> F01–F07</p>
-        <p class="spec-line"><b>Sessions:</b> 37</p>
-        <p class="spec-line"><b>Labour:</b> 770 minutes recorded</p>
-        <p class="spec-line"><b>Generated composition:</b> 2026-08-06</p>
-        <p class="spec-line spec-line--muted"><b>Field:</b> F30 / 910 × 727 mm</p>
+        <p class="spec-line"><b>Current archive state:</b> 04</p>
+        <p class="spec-line"><b>Fragments:</b> F01–F08</p>
+        <p class="spec-line"><b>Sessions:</b> 40</p>
+        <p class="spec-line"><b>Labour:</b> 816 minutes recorded</p>
+        <p class="spec-line"><b>Generated composition:</b> 9 August 2026</p>
+        <p class="spec-line spec-line--muted"><b>Format:</b> S60 / 1303 × 1303 mm</p>
       </div>
       <div class="jp-only">
-        <p class="spec-line"><b>現在のアーカイブ状態：</b>03</p>
-        <p class="spec-line"><b>Fragment：</b>F01〜F07</p>
-        <p class="spec-line"><b>セッション：</b>37</p>
-        <p class="spec-line"><b>記録労働時間：</b>770分</p>
-        <p class="spec-line"><b>構成生成日：</b>2026年8月6日</p>
-        <p class="spec-line spec-line--muted"><b>フィールド：</b>F30 / 910 × 727 mm</p>
+        <p class="spec-line"><b>現在のアーカイブ状態：</b>04</p>
+        <p class="spec-line"><b>Fragment：</b>F01〜F08</p>
+        <p class="spec-line"><b>セッション：</b>40</p>
+        <p class="spec-line"><b>記録労働時間：</b>816分</p>
+        <p class="spec-line"><b>構成生成日：</b>2026年8月9日</p>
+        <p class="spec-line spec-line--muted"><b>フォーマット：</b>S60 / 1303 × 1303 mm</p>
       </div>
 
       <p class="archive-state-note en-only">
-        A newly completed fragment does not occupy an available position. Its inclusion regenerates the composition of the entire archive. Earlier states are not overwritten; they remain sealed as historical states.
+        Completed sheets do not settle into a final composition. Each added fragment changes the input set and regenerates the entire arrangement. Earlier archive states are not overwritten; they remain sealed as precise historical states.
       </p>
       <p class="archive-state-note jp-only">
-        新しく完了したFragmentは、空いている位置へ追加されるのではない。その追加によって、アーカイブ全体の構成が再生成される。以前の状態は上書きされず、封印された歴史として保存される。
+        完了した紙片が最終的な構成へ固定されることはない。新しいFragmentが加わるたびに入力集合が変わり、配置全体が再生成される。以前のArchive Stateは上書きされず、正確な歴史的状態として封印される。
       </p>
 
-      <p class="section-label">Generated composition — archive state 03</p>
+      <p class="section-label">Generated composition — archive state 04</p>
       <figure class="composition-figure">
         <img
-          src="assets/images/composition_F30_2026-08-06.png"
-          alt="Generated composition of Archive State 03 containing F01 to F07 on an F30 field"
+          src="assets/images/composition_S60_2026-08-09.png"
+          alt="Generated composition of Archive State 04 containing F01 to F08 on an S60 field"
           fetchpriority="high">
         <figcaption class="figure-caption en-only">
-          Archive State 03 — F30, 910 × 727 mm, 6 August 2026. The completion of F07 regenerated the position of all seven fragments from their measured dimensions, final chain hashes, photograph file hashes, and the generation date. Generated composition; not physically assembled.
+          Archive State 04 — S60, 1303 × 1303 mm, 9 August 2026. The completion of F08 produced a new seed and regenerated the position of all eight fragments from their measured dimensions, final chain hashes, photograph file hashes, and the generation date. This image is a generated archive state, not a photograph of a physically assembled arrangement.
         </figcaption>
         <figcaption class="figure-caption jp-only">
-          アーカイブ状態03――F30、910 × 727 mm、2026年8月6日。F07の完了により、七つすべてのFragmentの位置が、測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、生成日から再生成された。生成された構成であり、物理的に組み立てられた状態ではない。
+          Archive State 04――S60、1303 × 1303 mm、2026年8月9日。F08の完了によって新しいシードが生じ、測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、生成日から八つすべてのFragmentの位置が再生成された。この画像は生成されたアーカイブ状態であり、物理的に組み立てられた配置の写真ではない。
         </figcaption>
       </figure>
     </div>
@@ -337,15 +346,15 @@
       <div class="language-copy">
         <h2 class="series__h en-only">Archive state transition</h2>
         <h2 class="series__h jp-only">アーカイブ状態の遷移</h2>
-        <p class="en-only">Each archive state belongs to one generation date and one set of completed fragment chains. When a new fragment is completed, it is not inserted into an existing empty position. The measured dimensions, final chain hashes, photograph file hashes, and generation date produce a new seed, and the positions of every fragment are recalculated. The previous state remains sealed rather than being replaced.</p>
-        <p class="jp-only">各Archive Stateは、一つの生成日と、その時点で完了していたFragmentチェーンの集合に属する。新しいFragmentが完了しても、既存構成の空いた位置へ挿入されるのではない。測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、生成日から新しいシードが生じ、すべてのFragmentの位置が再計算される。以前の状態は置き換えられず、封印されたまま残る。</p>
+        <p class="en-only">Fragment is not a final collage. Each archive state belongs to one generation date and one set of completed fragment chains. When a new fragment is completed, the measured dimensions, final chain hashes, photograph file hashes, and generation date produce a new seed, and every position is recalculated. The previous state remains sealed rather than being replaced: the work preserves both regeneration and archive.</p>
+        <p class="jp-only">Fragmentは最終的なコラージュではない。各Archive Stateは、一つの生成日と、その時点で完了していたFragmentチェーンの集合に属する。新しいFragmentが完了すると、測定寸法、チェーン最終ハッシュ、写真ファイルハッシュ、生成日から新しいシードが生じ、すべての位置が再計算される。以前の状態は置き換えられず封印されたまま残り、この作品は再生成とアーカイブの双方を保存する。</p>
       </div>
 
       <div class="language-copy">
         <h2 class="series__h en-only">Forgery and verification</h2>
         <h2 class="series__h jp-only">偽造と検証</h2>
-        <p class="en-only">The protocol was written by the same hand it commands. Verification can confirm consistency among recorded inputs; it cannot prove that the input referred to the correct image or that the record was true. F05 marks the point where the operator identified what formal verification had passed.</p>
-        <p class="jp-only">プロトコルは、それが命じる同じ手によって書かれた。検証は記録された入力同士の整合性を確認できるが、その入力が正しい画像を参照していたことや、記録が真実だったことまでは証明できない。F05は、形式的な検証が通過させたものを操作者が発見した地点を示す。</p>
+        <p class="en-only">The protocol was written by the same hand it commands. Verification can confirm consistency among recorded inputs; it cannot prove that the input referred to the correct image or that the record was true. F05 marks the point where the operator identified what formal verification had passed. The anomaly remains unrepaired and continues to exist inside the chain.</p>
+        <p class="jp-only">プロトコルは、それが命じる同じ手によって書かれた。検証は記録された入力同士の整合性を確認できるが、その入力が正しい画像を参照していたことや、記録が真実だったことまでは証明できない。F05は、形式的な検証が通過させたものを操作者が発見した地点を示す。この異常は修復されず、チェーンの内部に存続している。</p>
       </div>
     </div>
   </section>
@@ -398,10 +407,10 @@
         </div>
       </article>
 
-      <article class="state-card state-card--current">
+      <article class="state-card state-card--sealed">
         <div class="state-card__head">
           <h2 class="state-card__title">Archive State 03 · F01–F07</h2>
-          <span class="state-card__status">CURRENT</span>
+          <span class="state-card__status">SEALED</span>
         </div>
         <figure>
           <img src="assets/images/composition_F30_2026-08-06.png" alt="Archive State 03 generated composition containing F01 to F07" loading="lazy">
@@ -414,6 +423,26 @@
         <p class="state-card__hash">MASTER HASH<code>a47f366e…8b1dbf72</code>VERIFY HASH<code>3ba0f3de…85a31748</code></p>
         <div class="state-downloads">
           <a class="download-data" href="assets/data/composition_F30_2026-08-06.json" download><span class="en-only">Download State 03 JSON</span><span class="jp-only">State 03 JSONをダウンロード</span></a>
+        </div>
+      </article>
+
+      <article class="state-card state-card--current">
+        <div class="state-card__head">
+          <h2 class="state-card__title">Archive State 04 : F01–F08</h2>
+          <span class="state-card__status">CURRENT</span>
+        </div>
+        <figure>
+          <img src="assets/images/composition_S60_2026-08-09.png" alt="Archive State 04 generated composition containing F01 to F08" loading="lazy">
+          <figcaption>
+            <p class="state-card__meta">Generated 9 August 2026<br>S60 / 1303 × 1303 mm<br>40 sessions / 816 minutes</p>
+            <p class="state-card__caption en-only">The completion of F08 produced a new seed and regenerated the position of all eight fragments. This arrangement is sealed as the precise historical State 04 at this stage, while the series remains open to further regeneration. The image is a generated composition, not a photograph of a physically assembled arrangement.</p>
+            <p class="state-card__caption jp-only">F08の完了によって新しいシードが生じ、八つすべてのFragmentの位置が再生成された。この配置は現段階の正確な歴史的状態であるState 04として封印される一方、シリーズは今後の再生成へ開かれたままである。この画像は生成された構成であり、物理的に組み立てられた配置の写真ではない。</p>
+          </figcaption>
+        </figure>
+        <p class="state-card__hash">MASTER HASH<code>a85fb626…bda959bd</code>VERIFY HASH<code>e41455c4…24bb1728</code></p>
+        <div class="state-downloads">
+          <a class="download-data" href="assets/images/composition_S60_2026-08-09.png" download><span class="en-only">Download State 04 PNG</span><span class="jp-only">State 04 PNGをダウンロード</span></a>
+          <a class="download-data" href="assets/data/composition_S60_2026-08-09.json" download><span class="en-only">Download State 04 JSON</span><span class="jp-only">State 04 JSONをダウンロード</span></a>
         </div>
       </article>
     </div>
@@ -484,8 +513,8 @@
       <details class="archive-data">
         <summary>Archive data — session chains, verification, and recorded anomalies</summary>
         <div class="archive-data__body">
-          <p class="archive-verification-scope en-only">Browser verification dataset — Archive State 01 (F01–F05)</p>
-          <p class="archive-verification-scope jp-only">ブラウザ内検証データ――Archive State 01（F01〜F05）</p>
+          <p class="archive-verification-scope en-only">Browser verification currently reproduces the sealed State 01 record (F01–F05). It does not reproduce or verify Archive States 02–04.</p>
+          <p class="archive-verification-scope jp-only">ブラウザ内検証が現在再現するのは、封印されたState 01の記録（F01〜F05）のみである。Archive State 02〜04を再現・検証するものではない。</p>
           <!-- Retained for fragment.js compatibility; the new official composition is the PNG above. -->
           <figure class="hidden-reproduction" aria-hidden="true">
             <div class="comp__svg" id="comp"></div>
