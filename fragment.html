@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Series 3: Execution Protocol — Fragment / Takenori Maeda</title>
-<meta name="description" content="Execution Protocol — Fragment by Takenori Maeda: hand-drawn fragments, chained records, verification failure, and archive states regenerated whenever a new fragment is completed.">
+<meta name="description" content="Execution Protocol — Fragment by Takenori Maeda: hand-drawn fragments, chained records, recorded anomalies, and archive states regenerated whenever a new fragment is completed.">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,10 +351,12 @@
       </div>
 
       <div class="language-copy">
-        <h2 class="series__h en-only">Forgery and verification</h2>
-        <h2 class="series__h jp-only">偽造と検証</h2>
-        <p class="en-only">The protocol was written by the same hand it commands. Verification can confirm consistency among recorded inputs; it cannot prove that the input referred to the correct image or that the record was true. F05 marks the point where the operator identified what formal verification had passed. The anomaly remains unrepaired and continues to exist inside the chain.</p>
-        <p class="jp-only">プロトコルは、それが命じる同じ手によって書かれた。検証は記録された入力同士の整合性を確認できるが、その入力が正しい画像を参照していたことや、記録が真実だったことまでは証明できない。F05は、形式的な検証が通過させたものを操作者が発見した地点を示す。この異常は修復されず、チェーンの内部に存続している。</p>
+        <h2 class="series__h en-only">Verification and anomaly</h2>
+        <h2 class="series__h jp-only">検証と異常</h2>
+        <p class="en-only">F05 was not designed as an intentional error. An incorrect image reference entered the record and passed chain verification because the recorded data remained internally consistent. The mismatch was later identified by the operator. Rather than rewriting the sealed record, the error was annotated and retained as part of the archive history.</p>
+        <p class="en-only">The incident exposed a practical limit of the protocol: verification could confirm the consistency of the recorded data, but not whether the intended source image had been correctly referenced.</p>
+        <p class="jp-only">F05の誤りは、意図的に設計されたものではない。誤った画像参照が記録に入り、記録されたデータ自体には内部的な整合性があったため、チェーン検証を通過した。その後、操作者によって参照の食い違いが発見された。封印済みの記録を書き換える代わりに、誤りを注記し、アーカイブの履歴として保持した。</p>
+        <p class="jp-only">この出来事によって、プロトコルの実務的な限界が明らかになった。検証は記録データの整合性を確認できても、意図した元画像が正しく参照されていることまでは確認できなかった。</p>
       </div>
     </div>
   </section>
@@ -550,8 +552,8 @@
 
             <p class="anom__note en-only">One anomaly was flagged within the sealed archive (F05/S01). Four additional anomalies were identified during an archive review on 25 July 2026. These page-level annotations do not alter the sealed archive.</p>
             <p class="anom__note jp-only">封印されたアーカイブ内でフラグ付けされた異常は1件（F05/S01）。残る4件は2026年7月25日のアーカイブ点検時に確認された。これらはページ上の注記であり、封印済みアーカイブ自体は変更していない。</p>
-            <p class="anom__principle en-only">Errors are not corrected. They are recorded.</p>
-            <p class="anom__principle jp-only">誤りは訂正されない。記録される。</p>
+            <p class="anom__principle en-only">Sealed records are not rewritten. Errors identified afterward are annotated.</p>
+            <p class="anom__principle jp-only">封印済みの記録は書き換えない。後から確認された誤りは注記する。</p>
           </section>
 
           <a class="download-data" href="assets/data/composition_S100_2026-07-21.json" download><span class="en-only">Download State 01 JSON</span><span class="jp-only">State 01 JSONをダウンロード</span></a>
